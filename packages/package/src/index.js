@@ -219,6 +219,7 @@ async function process_file(input, output, file, preprocessor, aliases, tsconfig
 		}
 
 		if (file.name.endsWith('.ts') && !file.name.endsWith('.d.ts')) {
+			// contents = await transformImportMetaGlob(filename, contents);
 			contents = await transpile_ts(tsconfig, filename, contents);
 		}
 
